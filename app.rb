@@ -8,7 +8,7 @@ end
 
 get '/' do
   client = get_dropbox_client
-  path = '/Camera Uploads'
+  path = ENV['DROPBOX_FOLDER']
 
   out = []
   resp = client.send(:request, '/files/list_folder', path: path)
